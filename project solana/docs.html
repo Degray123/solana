@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GuardianX - Web3 Security</title>
+    <link rel="stylesheet" href="docs.css">
+    <script src="https://cdn.jsdelivr.net/npm/@solana/web3.js@latest/lib/index.iife.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@solana/web3.js@latest/lib/index.iife.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@solana/wallet-adapter-base@latest/lib/index.iife.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@solana/wallet-adapter-phantom@latest/lib/index.iife.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@solana/wallet-adapter-solflare@latest/lib/index.iife.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <header class="hero">
+            <div class="introducing-tag">Introducing</div>
+            <h1 class="brand-name">Guardian<span class="accent">X</span></h1>
+            <p class="tagline">AI Security That Stops Scams, Saves Gas, and Protects Web3.</p>
+        </header>
+
+        <section id="wallet-connection">
+            <h2>Wallet Connection</h2>
+            <div class="connect-container">
+                <div class="lock-icon"></div>
+                <button id="connect-wallet-btn">Connect Wallet</button>
+                <p id="wallet-status" class="status-text">Not Connected</p>
+            </div>
+        </section>
+
+        <section id="balance-info">
+            <h2>Balance</h2>
+            <p id="balance"><span class="balance-amount">--</span> SOL</p>
+        </section>
+
+        <section id="guardian-mode">
+            <h2>Guardian Mode</h2>
+            <div class="guardian-controls">
+                <div class="toggle-container">
+                    <label class="toggle-label" for="guardian-toggle">Guardian Mode:</label>
+                    <div class="toggle-switch">
+                        <input type="checkbox" id="guardian-toggle">
+                        <label class="slider" for="guardian-toggle"></label>
+                    </div>
+                </div>
+                <div class="sensitivity-control">
+                    <label for="sensitivity">Sensitivity:</label>
+                    <input type="range" id="sensitivity" min="1" max="10" value="5">
+                    <span id="sensitivity-value">5</span>
+                </div>
+            </div>
+        </section>
+
+        <section id="scam-detection">
+            <h2>Transaction Security</h2>
+            <p id="scam-status" class="status-text">Scam database: Not Fetched</p>
+            <div class="scam-indicators">
+                <div class="indicator safe">SAFE TRANSACTION</div>
+                <div class="indicator potential-scam">POTENTIAL SCAM</div>
+                <div class="indicator scam">SCAM DETECTED</div>
+                <div class="indicator scam-history">SCAM HISTORY</div>
+            </div>
+            <button id="fetch-db-btn">Fetch Scam Database</button>
+            <div id="detection-results">
+            </div>
+        </section>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

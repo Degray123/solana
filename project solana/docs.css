@@ -1,0 +1,379 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    background-color: #080808; /* Very dark background */
+    color: #f0f0f0; /* Very light text */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url('grid-pattern.png'); /* Add a subtle grid */
+    background-size: cover, auto;
+    background-position: center;
+    overflow-x: hidden; /* Prevent horizontal scroll during animations */
+}
+
+.container {
+    background-color: rgba(20, 20, 20, 0.85); /* Slightly transparent dark container */
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.5);
+    width: 90%;
+    max-width: 960px;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeIn 0.5s ease-out forwards 0.2s; /* Fade in animation */
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Hero Section */
+.hero {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.introducing-tag {
+    background-color: #00ff80; /* Neon green */
+    color: #080808;
+    padding: 8px 15px;
+    border-radius: 20px;
+    font-size: 0.9em;
+    display: inline-block;
+    margin-bottom: 10px;
+    font-weight: bold;
+    animation: pulse 1.5s infinite alternate; /* Pulsing neon effect */
+}
+
+@keyframes pulse {
+    from {
+        opacity: 0.8;
+        transform: scale(1);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1.05);
+        box-shadow: 0 0 15px #00ff80;
+    }
+}
+
+.brand-name {
+    font-size: 3.5em;
+    margin-bottom: 10px;
+    color: #f0f0f0;
+    text-shadow: 0 0 10px #00ff80; /* Neon glow */
+    animation: glow 2s infinite alternate; /* Subtle glow animation */
+}
+
+@keyframes glow {
+    from {
+        text-shadow: 0 0 5px #00ff80;
+    }
+    to {
+        text-shadow: 0 0 15px #00ff80;
+    }
+}
+
+.accent {
+    color: #00ff80;
+}
+
+.tagline {
+    color: #9e9e9e;
+    font-size: 1.2em;
+    font-weight: lighter;
+    opacity: 0;
+    transform: translateY(10px);
+    animation: slideUp 0.5s ease-out forwards 0.7s; /* Slide up animation */
+}
+
+@keyframes slideUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+h2 {
+    margin-top: 30px;
+    border-bottom: 2px solid #222;
+    padding-bottom: 15px;
+    color: #ccc;
+    opacity: 0;
+    transform: translateX(-20px);
+    animation: slideInLeft 0.5s ease-out forwards 0.4s; /* Slide in animation */
+}
+
+@keyframes slideInLeft {
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+button {
+    padding: 14px 28px;
+    background-color: #00ff80; /* Neon green button */
+    color: #080808;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1.1em;
+    transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+    margin-top: 20px;
+    font-weight: bold;
+    box-shadow: 0 0 8px rgba(0, 255, 128, 0.5); /* Subtle neon shadow */
+}
+
+button:hover {
+    background-color: #00cc66; /* Slightly darker neon green */
+    color: #f0f0f0;
+    box-shadow: 0 0 15px rgba(0, 255, 128, 0.8); /* Stronger neon shadow on hover */
+}
+
+#wallet-status, #balance {
+    margin-top: 15px;
+    font-size: 1.2em;
+    color: #ddd;
+    text-align: center;
+    opacity: 0;
+    animation: fadeIn 0.5s ease-out forwards 0.9s; /* Fade in */
+}
+
+.balance-amount {
+    font-weight: bold;
+    font-size: 1.6em;
+    color: #00ff80;
+}
+
+/* Wallet Connection Section */
+#wallet-connection .connect-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    opacity: 0;
+    animation: fadeIn 0.5s ease-out forwards 0.6s; /* Fade in */
+}
+
+.lock-icon {
+    width: 70px;
+    height: 70px;
+    background-image: url('lock-icon-neon.png'); /* Replace with a neon-style lock icon */
+    background-size: contain;
+    margin-bottom: 20px;
+    filter: brightness(1.8) drop-shadow(0 0 10px #00ff80); /* Stronger neon effect */
+    animation: spinAndPulse 2s infinite alternate; /* Spin and pulse animation */
+}
+
+@keyframes spinAndPulse {
+    0% {
+        transform: rotate(0deg) scale(1);
+        filter: brightness(1.8) drop-shadow(0 0 10px #00ff80);
+    }
+    100% {
+        transform: rotate(360deg) scale(1.1);
+        filter: brightness(2.2) drop-shadow(0 0 20px #00ff80);
+    }
+}
+
+/* Guardian Mode Styles */
+#guardian-mode .guardian-controls {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    opacity: 0;
+    animation: fadeIn 0.5s ease-out forwards 1.1s; /* Fade in */
+}
+
+.toggle-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.toggle-label {
+    margin-right: 20px;
+    color: #bbb;
+    font-weight: bold;
+}
+
+.toggle-switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+}
+
+.toggle-switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #333;
+    transition: .4s;
+    border-radius: 34px;
+    box-shadow: 0 0 5px #00ff80; /* Subtle neon glow on slider */
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: #eee;
+    transition: .4s;
+    border-radius: 50%;
+}
+
+input:checked + .slider {
+    background-color: #00ff80; /* Neon green when checked */
+}
+
+input:focus + .slider {
+    box-shadow: 0 0 2px #00ff80, 0 0 8px #00ff80; /* Stronger focus glow */
+}
+
+input:checked + .slider:before {
+    transform: translateX(26px);
+    background-color: #080808; /* Dark circle when on */
+}
+
+/* Sensitivity Control Styles */
+.sensitivity-control {
+    display: flex;
+    align-items: center;
+}
+
+.sensitivity-control label {
+    margin-right: 20px;
+    color: #bbb;
+    font-weight: bold;
+}
+
+.sensitivity-control input[type="range"] {
+    flex-grow: 1;
+    background-color: #222;
+    border: 1px solid #00ff80; /* Neon green border */
+    border-radius: 5px;
+    padding: 8px;
+    cursor: pointer;
+}
+
+.sensitivity-control input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    background: #00ff80; /* Neon green thumb */
+    cursor: pointer;
+    border-radius: 50%;
+    box-shadow: 0 0 5px #00ff80;
+}
+
+.sensitivity-control input[type="range"]::-moz-range-thumb {
+    width: 20px;
+    height: 20px;
+    background: #00ff80;
+    cursor: pointer;
+    border-radius: 50%;
+    box-shadow: 0 0 5px #00ff80;
+    border: none;
+}
+
+.sensitivity-control span {
+    margin-left: 20px;
+    color: #bbb;
+    font-weight: bold;
+}
+
+/* Scam Detection Section */
+#scam-detection .scam-indicators {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 20px;
+    justify-content: center;
+    opacity: 0;
+    animation: fadeIn 0.5s ease-out forwards 1.3s; /* Fade in */
+}
+
+.indicator {
+    background-color: #1a1a1a;
+    color: #ddd;
+    padding: 10px 15px;
+    border-radius: 8px;
+    font-size: 0.95em;
+    border: 1px solid #333;
+    animation: subtlePulse 1s infinite alternate; /* Subtle pulse */
+}
+
+@keyframes subtlePulse {
+    from {
+        opacity: 0.9;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.indicator.safe {
+    background-color: #1e4620;
+    border-color: #00ff80;
+    color: #00ff80;
+}
+
+.indicator.potential-scam {
+    background-color: #403018;
+    border-color: #ffcc00;
+    color: #ffcc00;
+}
+
+.indicator.scam {
+    background-color: #4a1e1e;
+    border-color: #ff4d4d;
+    color: #ff4d4d;
+}
+
+.indicator.scam-history {
+    background-color: #331a40;
+    border-color: #cc66ff;
+    color: #cc66ff;
+}
+
+#scam-status, #detection-results {
+    margin-top: 20px;
+    color: #ddd;
+    text-align: center;
+    opacity: 0;
+    animation: fadeIn 0.5s ease-out forwards 1.5s; /* Fade in */
+}
+
+#detection-results {
+    margin-top: 25px;
+    padding: 20px;
+    border: 1px solid #333;
+    border-radius: 8px;
+    background-color: #1a1a1a;
+    white-space: pre-wrap;
+    font-size: 0.9em;
+}
+
+.status-text {
+    color: #aaa;
+    font-size: 1em;
+    margin-top: 10px;
+}
